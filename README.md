@@ -1,1 +1,136 @@
-# Activation_Function_Analysis
+# Activation Function Comparison in Neural Networks
+
+This project provides a comprehensive, from-scratch analysis of **activation functions in neural networks**, focusing on their mathematical properties, training behavior, and impact on gradient flow. The experiments compare common activation functions in both **single-layer** and **multi-layer** neural networks, with visualizations and empirical results.
+
+The implementation avoids external deep learning frameworks (e.g., PyTorch, TensorFlow) in order to clearly demonstrate the mechanics of **forward propagation, backpropagation, and gradient behavior**.
+
+---
+
+## Project Overview
+
+Activation functions introduce nonlinearity into neural networks, enabling them to model complex relationships. However, the choice of activation function has a significant impact on:
+- training speed,
+- convergence behavior,
+- gradient stability,
+- and overall model performance.
+
+This project investigates these effects through:
+1. Mathematical visualization of activation functions and their derivatives  
+2. Training performance on linearly separable data  
+3. Performance in multi-layer perceptrons (MLPs)  
+4. Demonstration of the vanishing gradient problem  
+5. Decision boundary visualization for learned models  
+
+A detailed theoretical discussion and analysis of results is provided in  
+**`Activation_Function_Comparison.pdf`**.
+
+---
+
+## Activation Functions Studied
+
+- **Sigmoid**
+- **Tanh**
+- **ReLU**
+- **Leaky ReLU**
+- **ELU**
+
+Each function is analyzed in terms of:
+- output range,
+- derivative behavior,
+- susceptibility to vanishing gradients,
+- and empirical performance during training.
+
+---
+
+## File Structure
+
+```text
+.
+├── main_analysis.py              # Main script that runs all experiments
+├── activation_functions.py       # Activation functions and derivatives
+├── network_utils.py              # Data generation and neural network implementations
+├── visualizations.py             # Plotting and visualization utilities
+├── Activation_Function_Comparison.pdf
+├── requirements.txt
+└── README.md
+```
+## How to Run
+
+## 1. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+## 2. Run the Analysis
+```bash
+python main_analysis.py
+```
+This will:
+- train multiple neural networks,
+- print performance metrics to the console,
+- and generate all figures used in the analysis.
+
+## Experiments Performed
+# 1. Single-Layer Network Comparison
+A linearly separable binary classification task is used to compare convergence behavior across activation functions.
+All models reach high accuracy, but training speed differs significantly.
+
+## Key observation:
+ReLU-based activations converge faster than sigmoid and tanh.
+
+## 2. Activation Function & Derivative Visualization
+
+Plots are generated for:
+- each activation function,
+- and its corresponding derivative.
+- These figures illustrate why some functions suffer from vanishing gradients while others do not.
+
+## 3. Multi-Layer Perceptron (MLP) Training
+A non-linearly separable 2D dataset is used to evaluate hidden-layer activations in an MLP.
+## Architecture:
+- Input: 2 neurons
+- Hidden layer: 10 neurons
+- Output: 1 neuron (sigmoid)
+## Results summary:
+- Sigmoid struggles due to vanishing gradients
+- Tanh improves performance
+- ReLU significantly outperforms both in accuracy and convergence
+
+## 4. Decision Boundary Visualization
+Decision boundaries are plotted for each trained MLP, illustrating how different activation functions affect learned representations.
+
+## 5. Gradient Flow Analysis
+
+Gradient magnitude is simulated through increasing network depth to demonstrate:
+- exponential decay with sigmoid,
+- reduced decay with tanh,
+- stable gradient flow with ReLU.
+
+This directly illustrates the **vanishing gradient problem** discussed in the accompanying paper
+
+## Submission and Grading
+**Project requirements:**
+- Use any concept taught in class and deliver a meaningful expansion or connection
+- Open ended use of code, math, and creative ideas
+- Project was graded on accurately discussed topics, creative insights, and presentation skills
+- The code was not required for submission, only the report.
+
+**Project Grade:**
+Recieved Grade: 10/10 - A+
+Feedback: Course professor was impressed and is still pondering the depths of activation functions.
+
+## Key Takeaways
+- Activation functions strongly influence training dynamics, not just accuracy.
+- Sigmoid, while historically important, suffers from severe vanishing gradients.
+- Tanh improves gradient flow but still degrades in deep networks.
+- ReLU and its variants enable deep learning by maintaining stronger gradients.
+- Understanding derivatives is essential to understanding how neural networks learn.
+
+## Notes
+- All models and training logic are implemented from scratch using NumPy.
+- No automatic differentiation or deep learning libraries are used.
+- Figures generated by the script match those discussed in the report.
+
+## Author
+**Derek Regier**
+December 2025
