@@ -44,16 +44,19 @@ Each function is analyzed in terms of:
 
 ## File Structure
 
+## File Structure
+
 ```text
 .
-├── main_analysis.py              # Main script that runs all experiments
-├── activation_functions.py       # Activation functions and derivatives
-├── network_utils.py              # Data generation and neural network implementations
-├── visualizations.py             # Plotting and visualization utilities
+├── Project Code/
+│   ├── main_analysis.py              # Main script that runs all experiments
+│   ├── activation_functions.py       # Activation functions and derivatives
+│   ├── network_utils.py              # Data generation and neural network implementations
+│   ├── visualizations.py             # Plotting and visualization utilities
+│   └── requirements.txt
 ├── Activation_Function_Comparison.pdf
-├── requirements.txt
 └── README.md
-```
+
 ## How to Run
 
 ## 1. Install Dependencies
@@ -133,4 +136,5 @@ Feedback: Course professor was impressed and is still pondering the depths of ac
 
 ## Author
 **Derek Regier**
+
 December 2025
